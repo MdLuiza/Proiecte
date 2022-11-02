@@ -1,0 +1,187 @@
+pA = Point2D[{a, b}]
+pB = Point2D[{0, 0}]
+pC = Point2D[{c, 0}]
+tABC = Triangle2D[pA, pB, pC]
+ci = Circle2D[tABC, Inscribed2D] // FullSimplify
+pA1 = Point2D[Line2D[pB, pC], ci] // FullSimplify
+pB1 = Point2D[Line2D[pA, pC], ci] // FullSimplify
+pC1 = Point2D[Line2D[pA, pB], ci] // FullSimplify
+pI=Point2D[tABC, Inscribed2D] // FullSimplify
+IA1 = Segment2D[pI, pA1] // FullSimplify
+IB1 = Segment2D[pI, pB1] // FullSimplify
+IC1 = Segment2D[pI, pC1] // FullSimplify
+pA2 = Point2D[pI, pA1, d] // FullSimplify
+pB2 = Point2D[pI, pB1, d] // FullSimplify
+pC2 = Point2D[pI, pC1, d] // FullSimplify
+AA2 = Segment2D[pA, pA2] // FullSimplify
+BB2 = Segment2D[pB, pB2] // FullSimplify
+CC2 = Segment2D[pc, pC2] // FullSimplify
+pAA2BB2 = Point2D[AA2, BB2] // FullSimplify
+pBB2CC2 = Point2D[BB2, CC2] // FullSimplify
+dist = Distance2D[pAA2BB2, pBB2CC2] // FullSimplify
+Sketch2D[{pA, pB, pC, pA1, pB1, pC1, ci, tABC, pI, IA1, IB1, IC1, 
+   pA2, pB2, pC2, AA2, BB2, CC2} //. {a -> 2, b -> 5, c -> 7, 
+   d -> 1.5}]
+
+\!\(\*
+GraphicsBox[{
+{AbsolutePointSize[4], PointBox[{2., 5.}]}, 
+{AbsolutePointSize[4], PointBox[{0., 0.}]}, 
+{AbsolutePointSize[4], PointBox[{7., 0.}]}, 
+{AbsolutePointSize[4], PointBox[{2.657048497634514, 0.}]}, 
+{AbsolutePointSize[4], 
+     PointBox[{3.9290695423130604`, 3.0709304576869387`}]}, 
+{AbsolutePointSize[4], 
+     PointBox[{0.9868030386421375, 2.467007596605344}]}, 
+    CircleBox[{2.657048497634514, 1.798909413008393}, 
+     1.7989094130083927`], 
+    LineBox[{{2., 5.}, {0., 0.}, {7., 0.}, {2., 5.}}], 
+{AbsolutePointSize[4], 
+     PointBox[{2.657048497634514, 1.798909413008393}]}, 
+{RGBColor[1., 0.15371938658731976`, 0.13333333333333333`], 
+     AbsoluteThickness[2.41], 
+     LineBox[{{2.657048497634514, 1.798909413008393}, {
+      2.657048497634514, 0.}}]}, 
+{RGBColor[1., 0.08862439917601282, 0.06666666666666667], 
+     AbsoluteThickness[2.01], 
+     LineBox[{{2.657048497634514, 1.798909413008393}, {
+      3.9290695423130604`, 3.0709304576869387`}}]}, 
+{RGBColor[1., 0.11764705882352941`, 0.], AbsoluteThickness[2.91], 
+     LineBox[{{2.657048497634514, 1.798909413008393}, {
+      0.9868030386421375, 2.467007596605344}}]}, 
+{AbsolutePointSize[4], 
+     PointBox[{2.657048497634514, 0.2989094130083928}]}, 
+{AbsolutePointSize[4], 
+     PointBox[{3.717708669414336, 2.859569584788214}]}, 
+{AbsolutePointSize[4], 
+     PointBox[{1.2643334613066253`, 2.3559954275395483`}]}, 
+{RGBColor[0.11764705882352941`, 1., 0.], 
+     LineBox[{{2., 5.}, {2.657048497634514, 0.2989094130083928}}]}, 
+{RGBColor[0.13333333333333333`, 1., 0.21490806439307242`], 
+     LineBox[{{0., 0.}, {3.717708669414336, 2.859569584788214}}]}, 
+{RGBColor[0.17412069886320286`, 1., 0.13333333333333333`], 
+     LineBox[{{7., 0.}, {1.2643334613066253`, 2.3559954275395483`}}]},
+     InsetBox[
+GraphicsBox[{}], Scaled[{0.4895964519359729, 0.47092570816752455`}], 
+     Center, Scaled[{0.5, 0.5}]], 
+{RGBColor[1., 0.08862439917601282, 0.06666666666666667], 
+     AbsolutePointSize[3.], AbsoluteThickness[2.01], Opacity[1], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], 
+     InsetBox[
+      "", {1.6753776714110173`, 4.771308585781274}, {-1., 0.}]}, 
+{RGBColor[1., 0.08862439917601282, 0.06666666666666667], 
+     AbsolutePointSize[3.], AbsoluteThickness[2.01], Opacity[1], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], 
+     InsetBox["", {1.571562711615316, 4.875123545576974}, {-1., 0.}]}, 
+{RGBColor[
+     0.027450980392156862`, 0.027450980392156862`, 
+      0.027450980392156862`], AbsolutePointSize[3.], 
+     AbsoluteThickness[0.5], Opacity[1.], Dashing[{}], Arrowheads[
+     0.04], EdgeForm[{GrayLevel[0.], Opacity[1.], AbsoluteThickness[
+     0.5], Dashing[{}]}], 
+     InsetBox[
+      "", {3.6478619075293475`, 4.3115566209717375`}, {-1., 0.}]}, 
+{RGBColor[
+     0.027450980392156862`, 0.027450980392156862`, 
+      0.027450980392156862`], AbsolutePointSize[3.], 
+     AbsoluteThickness[0.5], Opacity[1.], Dashing[{}], Arrowheads[
+     0.04], EdgeForm[{GrayLevel[0.], Opacity[1.], AbsoluteThickness[
+     0.5], Dashing[{}]}], 
+     InsetBox["", {1.438086334735128, 4.830631419950246}, {-1., 0.}]}, 
+{RGBColor[
+     0.027450980392156862`, 0.027450980392156862`, 
+      0.027450980392156862`], AbsolutePointSize[3.], 
+     AbsoluteThickness[0.5], Opacity[1.], Dashing[{}], Arrowheads[
+     0.04], EdgeForm[{GrayLevel[0.], Opacity[1.], AbsoluteThickness[
+     0.5], Dashing[{}]}], 
+     InsetBox[A, {1.601224128699802, 4.964107796830433}, {-1., 0.}]}, 
+{RGBColor[
+     0.027450980392156862`, 0.027450980392156862`, 
+      0.027450980392156862`], AbsolutePointSize[3.], 
+     AbsoluteThickness[0.5], Opacity[1.], Dashing[{}], Arrowheads[
+     0.04], EdgeForm[{GrayLevel[0.], Opacity[1.], AbsoluteThickness[
+     0.5], Dashing[{}]}], 
+     InsetBox[
+      B, {-0.05981522803142303, 0.27760389748161884`}, {-1., 0.}]}, 
+{RGBColor[
+     0.027450980392156862`, 0.027450980392156862`, 
+      0.027450980392156862`], AbsolutePointSize[3.], 
+     AbsoluteThickness[0.5], Opacity[1.], Dashing[{}], Arrowheads[
+     0.04], EdgeForm[{GrayLevel[0.], Opacity[1.], AbsoluteThickness[
+     0.5], Dashing[{}]}], 
+     InsetBox[
+      C, {6.8649817006099365`, 0.37186780581795986`}, {-1., 0.}]}, 
+{RGBColor[1., 0.15371938658731976`, 0.13333333333333333`], 
+     AbsolutePointSize[3.], AbsoluteThickness[0.5], Opacity[1.], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], 
+     InsetBox[
+      "", {2.527324845950395, 0.027846744931168566`}, {-1., 0.}]}, 
+{RGBColor[1., 0.15371938658731976`, 0.13333333333333333`], 
+     AbsolutePointSize[3.], AbsoluteThickness[0.5], Opacity[1.], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], 
+     InsetBox[
+      C1, {0.702517479507416, 2.6005259828671727`}, {-1., 0.}]}, 
+{RGBColor[1., 0.15371938658731976`, 0.13333333333333333`], 
+     AbsolutePointSize[3.], AbsoluteThickness[0.5], Opacity[1.], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], 
+     InsetBox[
+      B1, {3.9781962766468624`, 3.1838660426317316`}, {-1., 0.}]}, 
+{RGBColor[1., 0.15371938658731976`, 0.13333333333333333`], 
+     AbsolutePointSize[3.], AbsoluteThickness[0.5], Opacity[1.], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], InsetBox[\!\(\*
+GraphicsBox[{},
+PlotRange->{{0, 1}, {0, 1}}]\)\!\(\*
+GraphicsBox[{},
+PlotRange->{{0, 1}, {0, 1}}]\)\!\(\*
+GraphicsBox[{},
+PlotRange->{{0, 1}, {0, 1}}]\)\!\(\*
+GraphicsBox[{},
+PlotRange->{{0, 1}, {0, 1}}]\)\!\(\*
+GraphicsBox[{},
+PlotRange->{{0, 1}, {0, 1}}]\), {-0.8725495568605668, 1.712125631511604}, {-1., 0.}]}, 
+{RGBColor[1., 0.15371938658731976`, 0.13333333333333333`], 
+     AbsolutePointSize[3.], AbsoluteThickness[0.5], Opacity[1.], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], 
+     InsetBox["", {2.888818509398571, 4.42111004376265}, {-1., 0.}]}, 
+{RGBColor[1., 0.15371938658731976`, 0.13333333333333333`], 
+     AbsolutePointSize[3.], AbsoluteThickness[0.5], Opacity[1.], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], 
+     InsetBox[
+      "", {2.761842858943441, 0.2713228097172369}, {-1., 0.}]}, 
+{RGBColor[1., 0.15371938658731976`, 0.13333333333333333`], 
+     AbsolutePointSize[3.], AbsoluteThickness[0.5], Opacity[1.], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], 
+     InsetBox[
+      A1, {2.2598168522403252`, 0.2034814574600592}, {-1., 0.}]}, 
+{RGBColor[1., 0.15371938658731976`, 0.13333333333333333`], 
+     AbsolutePointSize[3.], AbsoluteThickness[0.5], Opacity[1.], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], 
+     InsetBox[
+      "", {8.759018398477952, 2.8085893841356837`}, {-1., 0.}]}, 
+{RGBColor[1., 0.15371938658731976`, 0.13333333333333333`], 
+     AbsolutePointSize[3.], AbsoluteThickness[0.5], Opacity[1.], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], 
+     InsetBox[
+      I, {2.846494275009757, 1.9205318598545995`}, {-1., 0.}]}, 
+{RGBColor[0.28627450980392155`, 1., 0.06666666666666667], 
+     AbsolutePointSize[3.], AbsoluteThickness[0.5], Opacity[1.], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], 
+     InsetBox["", {9.812074082901427, 3.111112298531565}, {-1., 0.}]}, 
+{RGBColor[0.28627450980392155`, 1., 0.06666666666666667], 
+     AbsolutePointSize[3.], AbsoluteThickness[0.5], Opacity[1.], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], 
+     InsetBox[
+      C2, {1.2594722387060355`, 2.503583682290489}, {-1., 0.}]}, 
+{RGBColor[0.28627450980392155`, 1., 0.06666666666666667], 
+     AbsolutePointSize[3.], AbsoluteThickness[0.5], Opacity[1.], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], 
+     InsetBox[B2, {3.365227023831405, 2.999055396437635}, {-1., 0.}]}, 
+{RGBColor[0.28627450980392155`, 1., 0.06666666666666667], 
+     AbsolutePointSize[3.], AbsoluteThickness[0.5], Opacity[1.], 
+     Dashing[{}], Arrowheads[0.04], EdgeForm[None], 
+     InsetBox[
+      A2, {2.7734135874889803`, 0.5079337225311527}, {-1., 0.}]}},
+AspectRatio->Automatic,
+Axes->True,
+Frame->True,
+PlotRange->Automatic]\)
